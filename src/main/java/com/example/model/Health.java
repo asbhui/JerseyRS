@@ -4,6 +4,11 @@ public class Health {
 
 	private String status;
 	
+	public Health()
+	{
+		
+	}
+	
 	public Health(String status) {
 		this.setStatus(status);
 	}
