@@ -19,7 +19,7 @@ public class HealthControllerTest extends JerseyRsApplicationTests {
     @Test
     public void health() {
         ResponseEntity<Health> entity = 
-                restTemplate.getForEntity("http://localhost:9000/health", Health.class);
+                restTemplate.getForEntity("http://localhost:9000/jersey/health", Health.class);
 
         assertThat(entity.getStatusCode().is2xxSuccessful()).isTrue();
         assertThat(entity.getBody().getStatus()).isEqualTo("Jersey: Up and Running!");

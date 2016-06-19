@@ -1,30 +1,5 @@
 
-target/classes/application.properties
+target
 
-target/classes/com/example/config/JerseyConfig.class
+*.class
 
-target/classes/com/example/JerseyRsApplication.class
-
-target/classes/com/example/model/Health.class
-
-target/classes/com/example/resources/HealthController.class
-
-target/classes/META-INF/MANIFEST.MF
-
-target/classes/META-INF/maven/com.example/JerseyRS/pom.properties
-
-target/classes/META-INF/maven/com.example/JerseyRS/pom.xml
-
-target/test-classes/com/example/JerseyRsApplicationTests.class
-
-target/JerseyRS-0.0.1-SNAPSHOT.jar
-
-target/JerseyRS-0.0.1-SNAPSHOT.jar.original
-
-target/maven-archiver/pom.properties
-
-target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
-
-target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
-
-target/test-classes/com/example/resources/HealthControllerTest.class

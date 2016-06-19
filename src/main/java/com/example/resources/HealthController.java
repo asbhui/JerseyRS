@@ -12,10 +12,10 @@ import com.example.model.Health;
 
 @Component
 @Path("/health")
+@Produces(MediaType.APPLICATION_JSON)
 public class HealthController {
 
 	@GET
-	@Produces(MediaType.APPLICATION_JSON)
 	public Health health(){
 		return new Health("Jersey: Up and Running!");
 	}
