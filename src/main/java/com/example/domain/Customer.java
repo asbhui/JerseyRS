@@ -1,5 +1,6 @@
 package com.example.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,7 +16,7 @@ public class Customer{
 	
 	private String firstname, lastname;
 	
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="email_id")
 	private EmailAddress email;
 

@@ -13,10 +13,6 @@ public class EmailAddress {
 	private Long id;
 	
 	private String email;
-	
-	
-	
-	
 
 	@Version
 	private int version;
