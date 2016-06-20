@@ -23,7 +23,7 @@ public class HealthController {
 		return new Health("Jersey: Up and Running!");
 	}
 	
-	@RequestMapping(value="/health", produces=MediaType.APPLICATION_JSON)
+	@RequestMapping(value="/s_health", produces=MediaType.APPLICATION_JSON)
 	public Health springHealth(){
 		return new Health("Spring MVC: Up and Running!");
 	}

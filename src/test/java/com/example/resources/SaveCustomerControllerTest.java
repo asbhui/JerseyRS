@@ -13,8 +13,11 @@ import org.springframework.web.client.RestTemplate;
 
 import com.example.domain.Customer;
 import com.example.support.ApplicationTest;
+import com.example.support.Constants;
 import com.example.support.Page;
 import com.example.support.PageAssertion;
+
+
 
 
 //entry point for all assertThat methods and utility methods (e.g. entry)
@@ -24,8 +27,7 @@ import static org.assertj.core.api.Assertions.*;
 @ApplicationTest
 public class SaveCustomerControllerTest{
 
-    private RestTemplate restTemplate = new TestRestTemplate("example", "123456");
-    final String baseURI = "http://localhost:9000/jersey/customers";
+	private RestTemplate restTemplate = Constants.restTemplate; 
     
     /*
      * $ curl -i --user example:123456 -X POST -H 'Content-Type:application/json' -d '{"firstname": "Arvi", "lastname": "Singh", "email": { "email": "asingh@testmail.com"}' http://localhost:8080/jersey/customers
@@ -35,7 +37,9 @@ public class SaveCustomerControllerTest{
     @Test
     public void savesCustomer() {
 
-		URI uri = restTemplate.postForLocation(baseURI,new Customer("John", "Doe"));
+		URI uri = restTemplate.postForLocation(
+						String.format("%s/customers", Constants.baseUriJersey),
+						new Customer("John", "Doe"));
         
     	// assert
         ResponseEntity<Customer> responseEntity =

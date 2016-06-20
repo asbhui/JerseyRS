@@ -13,8 +13,10 @@ import org.springframework.web.client.RestTemplate;
 
 import com.example.domain.Customer;
 import com.example.support.ApplicationTest;
+import com.example.support.Constants;
 import com.example.support.Page;
 import com.example.support.PageAssertion;
+
 
 
 //entry point for all assertThat methods and utility methods (e.g. entry)
@@ -24,8 +26,7 @@ import static org.assertj.core.api.Assertions.*;
 @ApplicationTest
 public class CustomerControllerTest{
 
-    private RestTemplate restTemplate = new TestRestTemplate("example", "123456");
-    final String baseURI = "http://localhost:9000/jersey/customers";
+	private RestTemplate restTemplate = Constants.restTemplate; 
     
     /*
      * $ curl -i --user example:123456 "http://localhost:8080/jersey/customers?page=0&size=1"
@@ -38,7 +39,7 @@ public class CustomerControllerTest{
     public void returnsAllPages() {
         // act
 		ResponseEntity<Page<Customer>> responseEntity = getCustomers(
-				baseURI
+				String.format("%s/customers", Constants.baseUriJersey)
         );
         
         Page<Customer> customerPage = responseEntity.getBody();
@@ -56,7 +57,7 @@ public class CustomerControllerTest{
 
         // act
         ResponseEntity<Page<Customer>> responseEntity = getCustomers(
-                String.format("%s?%s", baseURI,"page=0&size=1&sort=firstname&direction=desc")
+        		String.format("%s/customers?%s", Constants.baseUriJersey, "page=0&size=1&sort=firstname&direction=desc")
         );
         // assert
         Page<Customer> customerPage = responseEntity.getBody();
