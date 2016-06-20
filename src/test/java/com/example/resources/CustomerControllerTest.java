@@ -22,7 +22,7 @@ import static org.assertj.core.api.Assertions.*;
 @ApplicationTest
 public class CustomerControllerTest{
 
-    private RestTemplate restTemplate = new TestRestTemplate("demo", "123456");
+    private RestTemplate restTemplate = new TestRestTemplate("example", "123456");
     final String BaseUrl = "http://localhost:9000/jersey/customers";
     
     /*
