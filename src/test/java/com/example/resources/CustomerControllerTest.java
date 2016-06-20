@@ -28,6 +28,7 @@ public class CustomerControllerTest{
     /*
      * $ curl "http://localhost:8080/jersey/customers?page=0&size=1"
      * $ curl -i -X POST -H 'Content-Type:application/json' -d '{"firstname": "Arvi", "lastname": "Singh", "email": { "email": "asingh@testmail.com"}' http://localhost:8080/jersey/customers
+     * $ curl -i --user example:123456 -X GET http://localhost:8080/customer/1
      */
     
     
