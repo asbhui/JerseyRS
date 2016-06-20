@@ -37,8 +37,6 @@ public class CustomerController {
 	@Context
 	private UriInfo uriInfo;
 	
-	
-	
 
 /*  @GET
   public Page<Customer> findAllEntities(

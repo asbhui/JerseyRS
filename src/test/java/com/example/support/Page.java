@@ -56,7 +56,6 @@ public class Page<T> {
     /**
      * @return The totalElements
      */
-    @JsonProperty("totalElements")
     public int getTotalElements() {
         return totalElements;
     }
@@ -64,7 +63,6 @@ public class Page<T> {
     /**
      * @param totalElements The totalElements
      */
-    @JsonProperty("totalElements")
     public void setTotalElements(int totalElements) {
         this.totalElements = totalElements;
     }
@@ -72,7 +70,6 @@ public class Page<T> {
     /**
      * @return The totalPages
      */
-    @JsonProperty("totalPages")
     public int getTotalPages() {
         return totalPages;
     }
@@ -80,7 +77,6 @@ public class Page<T> {
     /**
      * @param totalPages The totalPages
      */
-    @JsonProperty("totalPages")
     public void setTotalPages(int totalPages) {
         this.totalPages = totalPages;
     }
@@ -88,7 +84,6 @@ public class Page<T> {
     /**
      * @return The size
      */
-    @JsonProperty("size")
     public int getSize() {
         return size;
     }
@@ -96,7 +91,6 @@ public class Page<T> {
     /**
      * @param size The size
      */
-    @JsonProperty("size")
     public void setSize(int size) {
         this.size = size;
     }
@@ -104,7 +98,6 @@ public class Page<T> {
     /**
      * @return The number
      */
-    @JsonProperty("number")
     public int getNumber() {
         return number;
     }
@@ -112,7 +105,6 @@ public class Page<T> {
     /**
      * @param number The number
      */
-    @JsonProperty("number")
     public void setNumber(int number) {
         this.number = number;
     }
@@ -120,7 +112,6 @@ public class Page<T> {
     /**
      * @return The content
      */
-    @JsonProperty("content")
     public List<T> getContent() {
         return content;
     }
@@ -128,7 +119,6 @@ public class Page<T> {
     /**
      * @param content The content
      */
-    @JsonProperty("content")
     public void setContent(List<T> content) {
         this.content = content;
     }
@@ -136,7 +126,6 @@ public class Page<T> {
     /**
      * @return The sort
      */
-    @JsonProperty("sort")
     public List<Sort> getSort() {
         return sort;
     }
@@ -144,7 +133,6 @@ public class Page<T> {
     /**
      * @param sort The sort
      */
-    @JsonProperty("sort")
     public void setSort(List<Sort> sort) {
         this.sort = sort;
     }
@@ -152,7 +140,6 @@ public class Page<T> {
     /**
      * @return The first
      */
-    @JsonProperty("first")
     public boolean isFirst() {
         return first;
     }
@@ -160,7 +147,6 @@ public class Page<T> {
     /**
      * @param first The first
      */
-    @JsonProperty("first")
     public void setFirst(boolean first) {
         this.first = first;
     }
@@ -168,7 +154,6 @@ public class Page<T> {
     /**
      * @return The last
      */
-    @JsonProperty("last")
     public boolean isLast() {
         return last;
     }
@@ -176,7 +161,6 @@ public class Page<T> {
     /**
      * @param last The last
      */
-    @JsonProperty("last")
     public void setLast(boolean last) {
         this.last = last;
     }
@@ -184,7 +168,6 @@ public class Page<T> {
     /**
      * @return The numberOfElements
      */
-    @JsonProperty("numberOfElements")
     public int getNumberOfElements() {
         return numberOfElements;
     }
@@ -192,7 +175,6 @@ public class Page<T> {
     /**
      * @param numberOfElements The numberOfElements
      */
-    @JsonProperty("numberOfElements")
     public void setNumberOfElements(int numberOfElements) {
         this.numberOfElements = numberOfElements;
     }

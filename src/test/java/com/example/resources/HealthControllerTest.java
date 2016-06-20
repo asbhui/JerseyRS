@@ -1,23 +1,29 @@
 package com.example.resources;
 
+//entry point for all assertThat methods and utility methods (e.g. entry)
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.net.URI;
+
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.boot.test.TestRestTemplate;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.web.client.RestTemplate;
 
-import com.example.JerseyRsApplicationTests;
 import com.example.model.Health;
-
-//entry point for all assertThat methods and utility methods (e.g. entry)
-import static org.assertj.core.api.Assertions.*;
+import com.example.support.ApplicationTest;
 
 
-public class HealthControllerTest extends JerseyRsApplicationTests {
+@ApplicationTest
+@RunWith(SpringJUnit4ClassRunner.class)
+public class HealthControllerTest {
 
     private RestTemplate restTemplate = new TestRestTemplate("example", "123456");
 
     /*
-     * $ curl -i --user demo:123 -X GET http://localhost:8080/s/spring-health
+     * $ curl -i --user example:123456 -X GET http://localhost:8080/s/spring-health
      *
      */
     

@@ -15,6 +15,8 @@ import com.example.domain.Customer;
 import com.example.support.ApplicationTest;
 import com.example.support.Page;
 import com.example.support.PageAssertion;
+
+
 //entry point for all assertThat methods and utility methods (e.g. entry)
 import static org.assertj.core.api.Assertions.*;
 
@@ -23,11 +25,10 @@ import static org.assertj.core.api.Assertions.*;
 public class CustomerControllerTest{
 
     private RestTemplate restTemplate = new TestRestTemplate("example", "123456");
-    final String BaseUrl = "http://localhost:9000/jersey/customers";
+    final String baseURI = "http://localhost:9000/jersey/customers";
     
     /*
-     * $ curl "http://localhost:8080/jersey/customers?page=0&size=1"
-     * $ curl -i -X POST -H 'Content-Type:application/json' -d '{"firstname": "Arvi", "lastname": "Singh", "email": { "email": "asingh@testmail.com"}' http://localhost:8080/jersey/customers
+     * $ curl -i --user example:123456 "http://localhost:8080/jersey/customers?page=0&size=1"
      * $ curl -i --user example:123456 -X GET http://localhost:8080/customer/1
      */
     
@@ -37,7 +38,7 @@ public class CustomerControllerTest{
     public void returnsAllPages() {
         // act
 		ResponseEntity<Page<Customer>> responseEntity = getCustomers(
-                BaseUrl
+				baseURI
         );
         
         Page<Customer> customerPage = responseEntity.getBody();
@@ -55,7 +56,7 @@ public class CustomerControllerTest{
 
         // act
         ResponseEntity<Page<Customer>> responseEntity = getCustomers(
-                String.format("%s?%s", BaseUrl,"page=0&size=1&sort=firstname&direction=desc")
+                String.format("%s?%s", baseURI,"page=0&size=1&sort=firstname&direction=desc")
         );
         // assert
         Page<Customer> customerPage = responseEntity.getBody();
@@ -67,25 +68,6 @@ public class CustomerControllerTest{
                 .hasPageNumber(0)
                 .hasContentSize(1);
     }
-
-    
-/*    @Test
-    public void savesCustomer() {
-        // act
-        URI uri = restTemplate.postForLocation(BaseUrl,
-                new Customer("John", "Doe"));
-        // assert
-        ResponseEntity<Customer> responseEntity =
-                restTemplate.getForEntity(uri, Customer.class);
-
-        Customer customer = responseEntity.getBody();
-
-        assertThat(customer.getFirstname())
-                .isEqualTo("John");
-        assertThat(customer.getLastname())
-                .isEqualTo("Doe");
-    }*/
-    
     
     private ResponseEntity<Page<Customer>> getCustomers(String uri) {
         return restTemplate.exchange(
