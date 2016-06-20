@@ -23,10 +23,9 @@ public class HealthControllerTest {
     private RestTemplate restTemplate = new TestRestTemplate("example", "123456");
 
     /*
-     * $ curl -i --user example:123456 -X GET http://localhost:8080/s/spring-health
-     *
+     * $ curl -i --user example:123456 -X GET http://localhost:8080/jersey/health
+     * $ curl -i --user example:123456 -X GET http://localhost:8080/spring/health
      */
-    
     
     @Test
     public void jerseyHealth() {
