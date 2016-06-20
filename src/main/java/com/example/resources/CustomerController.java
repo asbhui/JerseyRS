@@ -4,6 +4,7 @@ import java.net.URI;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -92,6 +93,13 @@ public class CustomerController {
 		final Customer cust = customerRepository.findOne(customerId);
 		
 		return Response.ok(cust).build();
+	}
+	
+	@DELETE
+	@Path("{id}")
+	public Response delete(@PathParam("id") Long id) {
+	    customerRepository.delete(id);
+	    return Response.accepted().build();
 	}
 
 }

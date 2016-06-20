@@ -20,6 +20,11 @@ public class Customer{
 	@JoinColumn(name="email_id")
 	private EmailAddress email;
 
+	public Customer(String firstname, String lastname) {
+		this.firstname = firstname;
+		this.lastname = lastname;
+	}
+
 	/**
 	 * @return the id
 	 */
